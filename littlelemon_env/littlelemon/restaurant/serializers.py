@@ -6,9 +6,14 @@ from . import models
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups']
+        fields = "__all__"
         
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Menu
-        fields = ['Title', 'Price', 'inventory']
+        fields = "__all__"
+
+class BookingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Booking
+        fields = "__all__"
