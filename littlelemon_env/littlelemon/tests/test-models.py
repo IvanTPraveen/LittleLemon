@@ -1,7 +1,7 @@
-import unittest
+from django.test import TestCase
 from restaurant.models import *
 
-class MenuItemTest(unittest.TestCase):
+class MenuItemTest(TestCase):
     def test_model_case(self):
-        item = Menu.objects.create(title="icecream", price=1, inventory=2)
-        self.assertEqual('icecream : 1', item)
+        item = Menu.objects.create(title="icecream", price=1.56, inventory=100)
+        self.assertEqual(str(item), 'icecream : 1.56')
